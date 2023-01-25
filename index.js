@@ -222,16 +222,16 @@ async function init() {
       case "View all Employees":
         viewAllEmployees(db);
         break;
-        case "View Employees by Department":
-          await inquirer
+      case "View Employees by Department":
+        await inquirer
           .prompt(getDepartmentInfo)
           .then((info) => {
             viewEmployeesByDepartment(db, info.deptName);
           }
           );
         break;
-        case "View Employees by Manager":
-          await inquirer
+      case "View Employees by Manager":
+        await inquirer
           .prompt(getManagerID)
           .then((info) => {
             viewEmployeesByManager(db, info.mgrID);
@@ -241,6 +241,13 @@ async function init() {
       case "View all Roles":
         viewAllRoles(db);
         break;
+      case "View the Total Utilized Budget of a Department":
+        await inquirer
+          .prompt(getDepartmentInfo)
+          .then((info) => {
+            viewDeptBudget(db, info.deptName);
+          }
+          );
       default:
         finish = true;
         console.log("Goodbye!");
