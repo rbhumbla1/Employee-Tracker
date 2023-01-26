@@ -100,7 +100,7 @@ const viewDeptBudget = (db, dept) => {
 
         deptId = results[0].id;
 
-        query = `SELECT department_id, SUM(salary) FROM role WHERE department_id = ${deptId}`;
+        query = `SELECT department_id, SUM(salary) AS Budget FROM role WHERE department_id = ${deptId}`;
        
 
         const db2 = mysql.createConnection(
@@ -109,7 +109,7 @@ const viewDeptBudget = (db, dept) => {
               // MySQL username,
               user: 'root',
               // MySQL password
-              password: 'root', //******************put it in diff file */
+              password: 'root', 
               database: 'employee_db'
             },
             console.log(`Connected to the employee_db database.`)

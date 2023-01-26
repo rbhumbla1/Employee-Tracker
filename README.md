@@ -23,9 +23,9 @@ so that they can I organize and plan their business.  Here are the main features
     * View all Roles
     * View the Total Utilized Budget of a Department
     * Quit
-* When the user choose to add a department, they are prompted to enter the name of the department and that department is added to the database
-* When the userchoose to add an employee, they are prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database
-* When the user choose to add a role, they are prompted to enter the name, salary, and department for the role and that role is added to the database
+* When the user choose to add a department, they are prompted to enter the name of the department and that department is added to the database.  Name of the department is required and the user is prompted again if it is empty.
+* When the userchoose to add an employee, they are prompted to enter the employee’s first name, last name, role, and manager, and that employee is added to the database. First and last names of the employee are required and the user is prompted again if they are empty.
+* When the user choose to add a role, they are prompted to enter the name, salary, and department for the role and that role is added to the database. Title of the role is required and the user is prompted again if it is empty.
 * When the user choose to delete a department, they are prompted to enter the name of the department and that department is deleted in the database
 * When the user choose to delete an employee, they are prompted to enter Employee ID(to make sure correct Employee is chosen in case of duplicates) and that employee is deleted in the database
 * When the user choose to delete a role, they are prompted to enter the title of the role and that role is deleted in the database
@@ -59,12 +59,12 @@ Schema plan can be found here: ![Schema](./assets/images/Employee_tracker_Schema
 
 ## Mock-Up
 
-Demo of Project: [Employee Tracker Demo on Google Drive](https://drive.google.com/file/d/1m7W1FfVjCxuI6oazFl0zihe1y1DuNjzH/view?usp=sharing) 
+Demo of Project: [Employee Tracker Demo on Google Drive](https://drive.google.com/file/d/1SksMHqkyp1Uo_EMYHHpOpB6SoP6q2B6v/view?usp=sharing) 
                   OR [MP4 Demo File in Project](./dist/assets/images/Employee-Tracker.mp4)
 
 Application Screenshot:
 
-![Application Screenshot](./dist/assets/images/App_Screenshot.JPG)
+![Application Screenshot](./assets/images/Screenshot.JPG)
 
 ## Usage
 1. You can access the file in GitHub repository: https://github.com/rbhumbla1/Employee-Tracker

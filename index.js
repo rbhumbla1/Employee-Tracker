@@ -65,7 +65,7 @@ const getRoleInfo = [
   },
   {
     type: 'input',
-    message: 'Please provide the department the role belong to:',
+    message: 'Please provide the name of the department the role belong to:',
     name: 'dept',
   },
 ];
@@ -83,7 +83,7 @@ const getEmployeeID = [
 const getManagerID = [
   {
     type: 'input',
-    message: 'Please provide the ID of the new manager:',
+    message: 'Please provide the ID of the manager:',
     name: 'mgrID',
   },
 ];
@@ -96,7 +96,7 @@ const db = mysql.createConnection(
     // MySQL username,
     user: 'root',
     // MySQL password
-    password: 'root', //******************put it in diff file */
+    password: 'root', 
     database: 'employee_db'
   },
   console.log(`Connected to the employee_db database.`)
@@ -126,34 +126,59 @@ async function init() {
 
     switch (action) {
       case "Add a Department":
-        await inquirer
-          .prompt(getDepartmentInfo)
-          .then((info) => {
-            //create new department
-            addDepartment(db, info.deptName);
-            console.log("Added the new department: ", info.deptName);
-          }
-          );
+        let emptyDept = true;
+        while (emptyDept) {
+          await inquirer
+            .prompt(getDepartmentInfo)
+            .then((info) => {
+              if (info.deptName == "" || info.deptName == null) {
+                console.log("Department name can not be empty. Please provide a name.");
+              } else {
+                emptyDept = false;
+                //create new department
+                addDepartment(db, info.deptName);
+                console.log("Added the new department: ", info.deptName);
+              }
+            }
+            );
+        }
         break;
       case "Add an Employee":
+        let emptyEmp = true;
+        
+        while (emptyEmp) {
         await inquirer
           .prompt(getEmployeeInfo)
           .then((info) => {
+            if(info.fName == "" || info.fName == null || info.lName == "" || info.lName == null){
+              console.log("Employee first name and last name can not be empty. Please provide a first or last name.");
+            }else{
+              emptyEmp = false;
             //create new department
             addEmployee(db, info.fName, info.lName, info.role, info.manager);
             console.log("Added the new employee: ", info.fName, " ", info.lName);
+            }
           }
           );
+        }
         break;
       case "Add a Role":
-        await inquirer
-          .prompt(getRoleInfo)
-          .then((info) => {
-            //create new department
-            addRole(db, info.title, info.salary, info.dept);
-            console.log("Added the new role: ", info.title);
-          }
-          );
+        let emptyRole = true;
+        while (emptyRole) {
+          await inquirer
+            .prompt(getRoleInfo)
+            .then((info) => {
+              if (info.title == "" || info.title == null) {
+                console.log("Role title can not be empty. Please provide a title.");
+              } else {
+                emptyRole = false;
+                //create new department
+                addRole(db, info.title, info.salary, info.dept);
+                console.log("Added the new role: ", info.title);
+              }
+            }
+            );
+        }
         break;
       case "Delete a Department":
         await inquirer
@@ -248,7 +273,7 @@ async function init() {
             viewDeptBudget(db, info.deptName);
           }
           );
-          break;
+        break;
       default:
         finish = true;
         console.log("Goodbye!");
