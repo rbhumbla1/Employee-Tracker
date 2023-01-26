@@ -19,7 +19,7 @@ const viewAllDepartments = (db) => {
 const viewAllEmployees = (db) => {
     let query;
 
-    query = `SELECT * FROM employee`;
+    query = `SELECT employee.id, employee.first_name, employee.last_name, roledept.title, roledept.department_name, roledept.salary, employee.manager_id  FROM employee JOIN (SELECT role.id as rid, role.title, role.salary, department.name AS department_name FROM role JOIN department ON role.department_id = department.id) AS roledept ON employee.role_id = roledept.rid;`;
 
     db.query(query, function (err, results) {
         if (err) {
@@ -89,18 +89,6 @@ const viewAllRoles = (db) => {
 const viewDeptBudget = (db, dept) => {
     let query;
     let deptId;
-
-    // const db1 = mysql.createConnection(
-    //     {
-    //       host: '127.0.0.1',
-    //       // MySQL username,
-    //       user: 'root',
-    //       // MySQL password
-    //       password: 'root', //******************put it in diff file */
-    //       database: 'employee_db'
-    //     },
-    //     console.log(`Connected to the employee_db database.`)
-    //   );
 
     //get the role id from role name
     query = `SELECT id FROM department WHERE name = \"${dept}\"`;

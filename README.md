@@ -1,9 +1,9 @@
-# Employee-Tracker
-Employee-Tracker is a  command-line CMS application to manage a company's employee database, using Node.js, Inquirer, and MySQL
+# Employee Tracker
+Employee Tracker is a  command-line CMS application to manage a company's employee database, using Node.js, Inquirer, and MySQL
 
 ## Description
 
-Employee-Tracker application enables the user to view and manage the departments, roles, and employees in their company
+Employee Tracker application enables the user to view and manage the departments, roles, and employees in their company
 so that they can I organize and plan their business.  Here are the main features of the application:
 
 * When the application is started, the user is presented with the following options:
@@ -14,7 +14,7 @@ so that they can I organize and plan their business.  Here are the main features
     * Delete an Employee
     * Delete a Role
     * Update an Employee's Role
-    * Update an Employee\'s Manager
+    * Update an Employee's Manager
     * Update an Employee Role
     * View all Departments
     * View all Employees
@@ -36,6 +36,50 @@ so that they can I organize and plan their business.  Here are the main features
 * When the user choose to view all roles, they are presented with the job title, role id, the department that role belongs to, and the salary for that role.
 * When the user chooses to view the total utilized budget for a department, they are prompted to enter the name of the deparment and are then presented with department id and the total budget for it.
 
+## Technology Used
 
+* Uses the [inquirer package](https://www.npmjs.com/package/inquirer/v/8.2.4).
+* Uses the [mysql2 package](https://www.npmjs.com/package/mysql2) 
+* Uses the [console.table package](https://www.npmjs.com/package/jconsole.table) 
+
+## Installation
+
+  To install necessary dependencies, run the following command:
+  ```
+  npm i
+  ```
+  To install necessary database, schema and seed data, run the following commands in mysql2 CLI:
+  ```
+  source db/schema.sql
+  source db/seeds.sql
+  ```
+
+## Schema Used
+Schema plan can be found here: ![Schema](./assets/images/Employee_tracker_Schema.png)
 
 ## Mock-Up
+
+Demo of Project: [Employee Tracker Demo on Google Drive](https://drive.google.com/file/d/1m7W1FfVjCxuI6oazFl0zihe1y1DuNjzH/view?usp=sharing) 
+                  OR [MP4 Demo File in Project](./dist/assets/images/Employee-Tracker.mp4)
+
+Application Screenshot:
+
+![Application Screenshot](./dist/assets/images/App_Screenshot.JPG)
+
+## Usage
+1. You can access the file in GitHub repository: https://github.com/rbhumbla1/Employee-Tracker
+2. Run the application in the terminal using this command: 
+```
+node index.js
+```
+
+## License
+None
+
+## Contributing
+
+Contact owner
+
+## Questions
+
+  If you have any questions about the repository and project, or would like to open an issue or would like to contact me for contributing or any other subject, you can do so at rima.bhumbla@gmail.com. You can welcome to see more of my work at https://github.com/rbhumbla1.

@@ -14,7 +14,7 @@ const chooseAction = [
     type: 'list',
     message: 'Hi! What would you like to do?  Please select an action:',
     name: 'action',
-    choices: ['Add a Department', 'Add an Employee', 'Add a Role', 'Delete a Department', 'Delete an Employee', 'Delete a Role', 'Update an Employee\'s Manager', 'Update an Employee Role', 'View all Departments', 'View all Employees', 'View Employees by Department', 'View Employees by Manager', 'View all Roles', 'View the Total Utilized Budget of a Department', 'Quit']
+    choices: ['Add a Department', 'Add an Employee', 'Add a Role', 'Delete a Department', 'Delete an Employee', 'Delete a Role', 'Update an Employee\'s Manager', 'Update an Employee\'s Role', 'View all Departments', 'View all Employees', 'View Employees by Department', 'View Employees by Manager', 'View all Roles', 'View the Total Utilized Budget of a Department', 'Quit']
   }
 ];
 
@@ -201,7 +201,7 @@ async function init() {
           }
           );
         break;
-      case "Update an Employee Role":
+      case "Update an Employee\'s Role":
         await inquirer
           .prompt(getEmployeeID)
           .then((info) => {
