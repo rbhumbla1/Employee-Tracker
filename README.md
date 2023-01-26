@@ -60,7 +60,6 @@ Schema plan can be found here: ![Schema](./assets/images/Employee_tracker_Schema
 ## Mock-Up
 
 Demo of Project: [Employee Tracker Demo on Google Drive](https://drive.google.com/file/d/1SksMHqkyp1Uo_EMYHHpOpB6SoP6q2B6v/view?usp=sharing) 
-                  OR [MP4 Demo File in Project](./dist/assets/images/Employee-Tracker.mp4)
 
 Application Screenshot:
 
