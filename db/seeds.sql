@@ -24,7 +24,3 @@ VALUES ("Rima", "Bhumbla", 10, null),
        ("Raj", "Singh", 16, null),
        ("Anu", "Dani", 17, 106);
 
-
-
-
-

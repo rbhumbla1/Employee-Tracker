@@ -90,6 +90,18 @@ const viewDeptBudget = (db, dept) => {
     let query;
     let deptId;
 
+    // const db1 = mysql.createConnection(
+    //     {
+    //       host: '127.0.0.1',
+    //       // MySQL username,
+    //       user: 'root',
+    //       // MySQL password
+    //       password: 'root', //******************put it in diff file */
+    //       database: 'employee_db'
+    //     },
+    //     console.log(`Connected to the employee_db database.`)
+    //   );
+
     //get the role id from role name
     query = `SELECT id FROM department WHERE name = \"${dept}\"`;
 
@@ -99,20 +111,34 @@ const viewDeptBudget = (db, dept) => {
         }
 
         deptId = results[0].id;
-        console.log(deptId);
 
-        query = `SELECT SUM(salary) FROM role WHERE department_id = ${deptId};`;
-        console.log(query);
+        query = `SELECT department_id, SUM(salary) FROM role WHERE department_id = ${deptId}`;
+       
 
-        db.query(query, function (err, results1) {
+        const db2 = mysql.createConnection(
+            {
+              host: '127.0.0.1',
+              // MySQL username,
+              user: 'root',
+              // MySQL password
+              password: 'root', //******************put it in diff file */
+              database: 'employee_db'
+            },
+            console.log(`Connected to the employee_db database.`)
+          );
+
+        db2.query(query, function (err, results1) {
             if (err) {
                 console.log(err);
             }
             console.log("\n");
-            console.log(results1);
-            //console.table(results1);
+            
+            console.table(results1);
         });
+
+        db2.end();
     });
+
 }
 
 module.exports = { viewAllDepartments, viewAllEmployees, viewEmployeesByDepartment, viewEmployeesByManager, viewAllRoles, viewDeptBudget };

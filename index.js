@@ -248,6 +248,7 @@ async function init() {
             viewDeptBudget(db, info.deptName);
           }
           );
+          break;
       default:
         finish = true;
         console.log("Goodbye!");
